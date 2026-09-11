@@ -1,0 +1,20 @@
+* {
+    font-family: PTMono;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: SourceSans;
+    src: url(assets/SourceSans.ttf);
+}
+
+@font-face {
+    font-family: PTMono;
+    src: url(assets/PTMono.ttf);
+}

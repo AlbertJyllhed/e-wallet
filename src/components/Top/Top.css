@@ -1,0 +1,13 @@
+.top {
+    font-family: SourceSans;
+    text-transform: capitalize;
+}
+
+.top h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.top p {
+    margin-bottom: 0.5rem;
+}
