@@ -1,13 +1,16 @@
 .top {
     font-family: SourceSans;
-    text-transform: capitalize;
+    text-align: center;
 }
 
 .top h1 {
-    font-size: 3rem;
+    font-family: SourceSans;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
 .top p {
+    font-family: SourceSans;
+    color: #22222299;
     margin-bottom: 0.5rem;
 }

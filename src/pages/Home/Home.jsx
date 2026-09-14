@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 import Top from "../../components/Top/Top";
@@ -7,17 +6,18 @@ import Card from "../../components/Card/Card";
 import CardStack from "../../components/CardStack/CardStack";
 
 function Home() {
-    const activeCard = useSelector((state) => state.value);
-    const [cards, setCards] = useState([]);
+    const [activeCard, setActiveCard] = useState(null);
 
     const navigate = useNavigate();
 
     return (
         <main>
-            <Top title="E-Wallet" subtitle="Active Card" />
-            <Card card={activeCard} onActivate={() => {}} />
-            <CardStack cards={cards} />
-            <button onClick={() => navigate("/addcard")}>Add a New Card</button>
+            <div className="page-top">
+                <Top title="E-WALLET" subtitle="ACTIVE CARD" />
+                <Card card={activeCard} onActivate={() => {}} />
+            </div>
+            <CardStack onSetActive={setActiveCard} />
+            <button onClick={() => navigate("/addcard")}>ADD A NEW CARD</button>
         </main>
     );
 }

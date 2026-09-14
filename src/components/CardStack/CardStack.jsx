@@ -1,10 +1,8 @@
-import { setActiveCard } from "../../reducers/cardReducer";
-import { useDispatch } from "react-redux";
-
+import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 
-function CardStack({ cards }) {
-    const dispatch = useDispatch();
+function CardStack({ onSetActive }) {
+    const cards = useSelector((state) => state.cards);
 
     if (!cards || cards.length === 0) {
         return;
@@ -13,10 +11,7 @@ function CardStack({ cards }) {
     return (
         <div className="card-stack">
             {cards.map((card) => (
-                <Card
-                    card={card}
-                    onActivate={() => dispatch(setActiveCard(card))}
-                />
+                <Card card={card} onActivate={() => onSetActive(card)} />
             ))}
         </div>
     );
