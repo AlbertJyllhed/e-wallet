@@ -1,8 +1,8 @@
 import "./CardForm.css";
 
-function CardForm() {
+function CardForm({ onSubmit }) {
     return (
-        <form id="card-form" className="card-form">
+        <form id="card-form" className="card-form" onSubmit={onSubmit}>
             <label>CARD NUMBER</label>
             <input type="text" placeholder="XXXX XXXX XXXX XXXX" />
             <label>CARDHOLDER NAME</label>
