@@ -1,8 +1,11 @@
 import { useSelector } from "react-redux";
+import "./CardStack.css";
+
 import Card from "../Card/Card";
 
-function CardStack({ onSetActive }) {
+function CardStack({ activeCard, onSetActive }) {
     const cards = useSelector((state) => state.cards);
+    const filteredCards = cards.filter((card) => card !== activeCard);
 
     if (!cards || cards.length === 0) {
         return;
@@ -10,8 +13,12 @@ function CardStack({ onSetActive }) {
 
     return (
         <div className="card-stack">
-            {cards.map((card) => (
-                <Card card={card} onActivate={() => onSetActive(card)} />
+            {filteredCards.map((card) => (
+                <Card
+                    key={`${card.vendor}-${card.number}`}
+                    card={card}
+                    onActivate={() => onSetActive(card)}
+                />
             ))}
         </div>
     );

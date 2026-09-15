@@ -4,6 +4,13 @@
     padding: 0;
 }
 
+:root {
+    --bitcoin: #ffae34;
+    --ninja-bank: #222222;
+    --blockchain: #8b58f9;
+    --evil-corp: #f33355;
+}
+
 body {
     display: flex;
     justify-content: center;

@@ -1,0 +1,27 @@
+.card-stack {
+    width: 100%;
+    padding-bottom: 12rem;
+}
+
+.card-stack .card {
+    position: relative;
+    margin-bottom: -12rem;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.card-stack .card:last-child {
+    z-index: 1;
+}
+
+.card-stack .card:hover {
+    cursor: pointer;
+    transform: translateY(-0.4rem);
+    -webkit-transform: translateY(-0.4rem);
+    -moz-transform: translateY(-0.4rem);
+    -ms-transform: translateY(-0.4rem);
+    -o-transform: translateY(-0.4rem);
+}

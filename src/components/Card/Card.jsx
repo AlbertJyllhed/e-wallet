@@ -1,22 +1,28 @@
+import vendorDetails from "../../utils/vendorDetails";
+import lightChip from "../../assets/chip-light.svg";
+import darkChip from "../../assets/chip-dark.svg";
 import "./Card.css";
 
 function Card({ card, onActivate }) {
-    const displayCard = card ?? {
-        number: "XXXX XXXX XXXX XXXX",
-        holder: "",
-        validity: "XX / XX",
+    const vendor = vendorDetails[card?.vendor] || vendorDetails.default;
+    const displayCard = {
+        number: card?.number || "XXXX XXXX XXXX XXXX",
+        holder: card?.holder || "",
+        validity: card?.validity || "XX/XX",
     };
 
     return (
         <div
-            className={`card${card ? "" : " disabled"}`}
-            onClick={card && onActivate ? () => onActivate(card) : undefined}
+            className={`card ${vendor.dark ? "dark" : ""}`}
+            style={{ backgroundColor: vendor.color }}
+            onClick={onActivate ? () => onActivate(card) : undefined}
         >
             <div className="card-images">
-                <img src="/src/assets/chip-dark.svg" alt="card-chip" />
-                {card?.vendor && (
+                <img src={vendor.dark ? lightChip : darkChip} alt="card-chip" />
+                {vendor.image && (
                     <img
-                        src={card.vendor}
+                        className="card-vendor"
+                        src={vendor.image}
                         alt={`card-vendor: ${card.vendor}`}
                     />
                 )}

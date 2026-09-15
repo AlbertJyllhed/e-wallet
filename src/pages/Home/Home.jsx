@@ -14,9 +14,9 @@ function Home() {
         <main>
             <div className="page-top">
                 <Top title="E-WALLET" subtitle="ACTIVE CARD" />
-                <Card card={activeCard} onActivate={() => {}} />
+                <Card card={activeCard} />
             </div>
-            <CardStack onSetActive={setActiveCard} />
+            <CardStack activeCard={activeCard} onSetActive={setActiveCard} />
             <button onClick={() => navigate("/addcard")}>ADD A NEW CARD</button>
         </main>
     );
